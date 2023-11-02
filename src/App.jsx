@@ -9,46 +9,72 @@ import {
     Link
 }   from "react-router-dom";
 
-export default function App() {
-  const [count, setCount] = useState(0)
+function App() {
 
   return (
-    <>
+    <Router>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
+          <li>
+            <Link to="/chat">Chat</Link>
+          </li>
+        </ul>
+
+
+        <hr />
+
+        <Switch>
+          <Route path="/home">
+            <App />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/chat">
+            <Chat />
+          </Route>
+        </Switch>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+    </Router>
+  );
 }
 
-
+export default App;
 
 
 function Login() {
-  
+  return (
+    <div>
+      <h2>Login</h2>
+    </div>
+  );
 }
 
 function Profile() {
-
+  return (
+    <div>
+      <h2>Profile</h2>
+    </div>
+  );
 }
 
 function Chat() {
-  
+  return (
+    <div>
+      <h2>Chat</h2>
+    </div>
+  );
 }
