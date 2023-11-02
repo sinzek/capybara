@@ -1,6 +1,8 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
-import Root from './routes/root.jsx'
+import Root from './routes/root'
+import ErrorPage from './routes/error-page'
+import Profile from "./routes/profile";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,6 +13,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "profile",
+    element: <Profile />,
   },
 ]);
 
