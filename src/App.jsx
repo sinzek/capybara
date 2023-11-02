@@ -9,7 +9,7 @@ import {
     Link
 }   from "react-router-dom";
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0)
 
   return (
@@ -38,4 +38,17 @@ function App() {
   )
 }
 
-export default App
+
+
+
+function Login() {
+  
+}
+
+function Profile() {
+
+}
+
+function Chat() {
+  
+}
